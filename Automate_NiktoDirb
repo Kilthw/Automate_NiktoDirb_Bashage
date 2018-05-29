@@ -1,0 +1,5 @@
+Nikto:
+python3 -c 'import subprocess; [subprocess.run(["nikto","-host",i,"-o",i.replace("//","").replace(":","_").strip() + ".txt"]) for i in open("/root/share/Data/Network Mapping/External/Nmap/Parsed-Results/Third-Party/PeepingTom.txt","r")]'
+
+Dirb:
+python3 -c 'import subprocess; [subprocess.run(subprocess.run(["dirb",i,"-o",i.replace("//","").replace(":","_").strip() + ".txt","-p","127.0.0.1:8080"]) for i in open("/root/share/Data/Network Mapping/External/Nmap/Parsed-Results/Third-Party/PeepingTom.txt","r")]'
